@@ -9,7 +9,7 @@ const bigtree = () => import(/* webpackChunkName: "bigtree" */ '@/views/bigTree'
 const overflow = () => import(/* webpackChunkName: "overflow" */ '@/views/overflow/index')
 const resizable = () => import(/* webpackChunkName: "resizable" */ '@/views/resizable')
 const tabs = () => import(/* webpackChunkName: "resizable" */ '@/views/tabs')
-const home = () => import(/* webpackChunkName: "bigDataTable6" */ '@/views/bigDataTable/bigDataTable6')
+const page1 = () => import(/* webpackChunkName: "bigDataTable6" */ '@/views/page1')
 
 
 Vue.use(Router);
@@ -25,6 +25,6 @@ export default new Router({
       { path: '/overflow', component: overflow },
       { path: '/resizable', component: resizable },
       { path: '/tabs', component: tabs },
-      { path: '/home', component: bigDataTable1 }
+      { path: '/page1', component: page1 }
     ]
 });

@@ -37,7 +37,8 @@ html, body,#app {
 		left:0px;
 	}
 	.aside.main{
-    	margin-left:250px;
+		margin-top: 10px;
+    	margin-left:260px;
 	}
 	.aside {
 		height:600px;
