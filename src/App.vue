@@ -1,32 +1,46 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<div class="aside left">
+			<left-menu></left-menu>
+		</div>
+		<div class="aside main">
+			<router-view></router-view>
+		</div>
+	</div>
 </template>
-
+<script>
+import leftMenu from '@/components/leftMenu.vue';
+export default {
+    data() {
+        return {};
+	},
+	components: {
+		leftMenu
+	},
+    mounted() {
+    },
+    methods: {}
+};
+</script>
+</script>
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html, body,#app {
+	height: 100%;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#app {
+	.aside.left{
+		height: 100%;
+    	background-color: #304156;
+		position:absolute;
+		width:250px;
+		top:0px;
+		left:0px;
+	}
+	.aside.main{
+    	margin-left:250px;
+	}
+	.aside {
+		height:600px;
+	}
 }
 </style>
