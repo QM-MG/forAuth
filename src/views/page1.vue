@@ -1,36 +1,12 @@
 <template>
     <div class="page1">
-        <div class="page1-search">
-            <el-input v-model="param.name" placeholder="请输入内容" size="mini"></el-input>
-            <el-select v-model="param.status" placeholder="请选择" size="mini">
-                <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-                </el-option>
-            </el-select>
-            <el-button type="success" @click="search" size="mini">搜索</el-button>
-            <el-button type="warning" @click="reset" size="mini">重置</el-button>
-        </div>
-         <el-table
-            :data="tableData"
-            style="width: 100%">
-            <el-table-column
-                prop="date"
-                label="日期"
-                width="180">
-            </el-table-column>
-            <el-table-column
-                prop="name"
-                label="姓名"
-                width="180">
-            </el-table-column>
-            <el-table-column
-                prop="address"
-                label="地址">
-            </el-table-column>
-        </el-table>
+        <button v-on:click="show = !show">
+            Toggle
+        </button>
+        <transition name="fade">
+            <p v-if="show">hello</p>
+        </transition>
+       
     </div>
 </template>
 <script>
@@ -38,6 +14,7 @@ import {searchData} from '@/api/page1/index';
 export default {
     data() {
         return {
+            show: true,
             tableData: [{
                 date: '2016-05-02',
                 name: '王小虎',
@@ -107,6 +84,12 @@ export default {
             margin-right: 10px;
         }
     }
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+        }
+        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+        }
 }
 </style>
 
